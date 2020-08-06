@@ -1,2 +1,3 @@
 ---
     - name : secon file
+      hosts : localhost
