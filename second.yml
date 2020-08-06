@@ -1,3 +1,8 @@
 ---
+<<<<<<< HEAD
     - name : secon file
       hosts : localhost
+=======
+    - name : secon filei
+      hosts: all
+>>>>>>> second
