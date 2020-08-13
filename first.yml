@@ -2,3 +2,4 @@
     - name: install apahce
       host: firshost
       task :
+        - name : empty task
