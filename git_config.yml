@@ -1,0 +1,13 @@
+---
+- name : test file
+  hosts: localhost
+  become: true
+  tasks:
+    - copy:
+        src: ./gitconfi.master
+        dest: ~/.gitconfig
+    - name : installing wget
+      apt:
+        name: wget
+        state: latest
+        update_cache: yes
