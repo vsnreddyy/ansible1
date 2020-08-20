@@ -1,13 +1,23 @@
 ---
 - name : test file
-  hosts: localhost
+  hosts: all
   become: true
   tasks:
     - copy:
         src: ./gitconfi.master
-        dest: ~/.gitconfig
+        dest: /home/ubuntu/.gitconfig
     - name : installing wget
       apt:
         name: wget
         state: latest
         update_cache: yes
+    - name: Download foo.conf
+      get_url:
+        url: https://github.com/sharkdp/bat/releases/download/v0.11.0/bat_0.11.0_amd64.deb
+        dest: .
+        mode: '777'
+        owner: ubuntu
+        group: ubuntu
+    - name: install bat
+      apt:
+        deb: bat_0.11.0_amd64.deb
